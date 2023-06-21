@@ -6,7 +6,6 @@ function Classes() {
   const [sessions, setSessions] = useState([]);
   const [selectedSession, setSelectedSession] = useState(null);
   const [noSessionFound, setnoSessionFound] = useState(true);
-  const [completedSessions, setCompletedSessions] = useState([]);
   const [userId, setuserId] = useState('')
   const [selectedSessionNumber, setselectedSessionNumber] = useState(1000)
 
@@ -39,7 +38,6 @@ function Classes() {
   const handleCompleteSession = async (sessionId,number) => {
     try {
       await completeClass(sessionId, userId);
-      setCompletedSessions((prevSessions) => [...prevSessions, sessionId]);
       fetchSessionById(number); // Fetch the updated session
       toast.success('class marked completed')
     } catch (error) {
