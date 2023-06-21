@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:12000/api'; // Replace with your API URL
+const API_URL = 'https://student-dashboard-backend-yieo.onrender.com/api'; // Replace with your API URL
 
 // User signup
 export const signup = async (userData) => {
