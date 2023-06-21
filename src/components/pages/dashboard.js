@@ -1,6 +1,7 @@
 import React from 'react';
 import LineChart from '../charts/lineChart';
 import BarChart from '../charts/barChart';
+import { Chart } from 'chart.js/auto';
 
 function Dashboard() {
     return (
