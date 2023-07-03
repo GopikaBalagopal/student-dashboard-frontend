@@ -4,7 +4,6 @@ import BarChart from '../charts/barChart';
 import { Chart } from 'chart.js/auto';
 
 function Dashboard() {
-    console.log(Chart)
     return (
         <div className="mt-4 ml-2" style={{marginLeft:'20px'}}>
             <div className="d-flex mb-3">

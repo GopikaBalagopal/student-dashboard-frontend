@@ -10,6 +10,8 @@ function TopBar() {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
+    sessionStorage.removeItem('user_id')
+    sessionStorage.removeItem('user_name')
     toast.success('Logged out of the account');
     navigate('/auth/sign-in');
   };

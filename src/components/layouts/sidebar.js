@@ -61,6 +61,11 @@ function SideBar() {
       label: 'Calendar',
       link: '/dashboard'
     },
+    {
+      icon: <FontAwesomeIcon icon={faCalendar} style={{ fill: activeLink === 'Calendar' ? 'violet' : 'white', fontSize: '24px' }} />,
+      label: 'Reset Password',
+      link: '/auth/reset-password'
+    },
   ];
 
   const handleLinkClick = (link) => {

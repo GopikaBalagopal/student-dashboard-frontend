@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_URL = 'https://student-dashboard-backend-yieo.onrender.com/api'; // Replace with your API URL
+const API_URL = "https://student-dashboard-backend-yieo.onrender.com/api"; // Replace with your API URL
 
 // User signup
 export const signup = async (userData) => {
@@ -16,6 +16,15 @@ export const signup = async (userData) => {
 export const signin = async (userData) => {
   try {
     const response = await axios.post(`${API_URL}/signin`, userData);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const resetPassword = async (userData) => {
+  try {
+    const response = await axios.post(`${API_URL}/reset-password`, userData);
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -64,7 +73,10 @@ export const getLeaderboard = async () => {
 // Update a session
 export const updateSession = async (sessionId, sessionData) => {
   try {
-    const response = await axios.put(`${API_URL}/sessions/${sessionId}`, sessionData);
+    const response = await axios.put(
+      `${API_URL}/sessions/${sessionId}`,
+      sessionData
+    );
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -83,7 +95,10 @@ export const deleteSession = async (sessionId) => {
 
 export const completeClass = async (sessionId, userId) => {
   try {
-    const response = await axios.post(`${API_URL}/classes/complete`, { sessionId, userId });
+    const response = await axios.post(`${API_URL}/classes/complete`, {
+      sessionId,
+      userId,
+    });
     return response.data;
   } catch (error) {
     throw new Error(error.response.data.message);
@@ -123,7 +138,10 @@ export const getProfileById = async (profileId) => {
 // Update a profile
 export const updateProfile = async (profileId, updatedData) => {
   try {
-    const response = await axios.put(`${API_URL}/profiles/${profileId}`, updatedData);
+    const response = await axios.put(
+      `${API_URL}/profiles/${profileId}`,
+      updatedData
+    );
     return response.data;
   } catch (error) {
     throw error.response.data;
